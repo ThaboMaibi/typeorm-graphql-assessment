@@ -23,7 +23,6 @@ frameworkVersion: "3"
 provider:
   name: aws
   runtime: nodejs18.x
-  memorySize: 2048
   stage: dev
   timeout: 20
   region: us-east-1
@@ -59,13 +58,18 @@ provider:
 #    - include-me.js
 #    - include-me-dir/**
 
+package:
+  patterns:
+    - '!node_modules/**'
+
+
 functions:
   hello:
     handler: handler.hello
     events:
      - http: ANY /{proxy+}
      - http: ANY /
-     environment:
+    environment:
       PORT: 5000
       NODE_ENV: 'development'
       DB_HOST: ec2-34-193-110-25.compute-1.amazonaws.com

@@ -45,10 +45,10 @@ const bootstrap = async () => {
     });
      app.listen({ port }, () => {
       console.log(
-        `🚀 Server ready at http://localhost:${port}${server.graphqlPath}`
+        `🚀 Server ready at ${port}${server.graphqlPath}`
       );
     });
-    return { app, server}; 
+    return app ; 
   } catch (err) {
     console.error(err);
   }

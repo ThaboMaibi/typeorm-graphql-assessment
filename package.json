@@ -37,7 +37,6 @@
     "graphql-middleware": "^6.1.35",
     "graphql-shield": "^7.6.5",
     "jsonwebtoken": "^9.0.2",
-    "mysql": "^2.18.1",
     "pg": "^8.11.3",
     "reflect-metadata": "^0.1.13",
     "serverless": "^3.35.2",

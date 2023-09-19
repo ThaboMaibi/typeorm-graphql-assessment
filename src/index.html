@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Graphql api documentation</title>
+  </head>
+  <body>
+    <div class="container mt-3 mb-3">
+      <h4 class="mb-3">API documentation By Thabo Maibi</h4>
+      <a class="btn btn-outline-secondary mb-3 btn" href="#" role="button">&#128640; Test API</a>
+      <a class="btn btn-outline-secondary mb-3 btn" href="#" role="button">&#128452; Github Code</a>
+      <blockquote class="blockquote">
+        <p class="mb-0">API Endpoint.</p>
+        <footer class="blockquote-footer">http://localhost:3000/graphql</footer>
+      </blockquote>
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Create user
+            </button>
+          </h5>
+        </div>
+    
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body"><u>Example code:</u></div>
+          <pre class="prettyprint">
+            mutation {
+              createUser(name:"sello",email:"sl@gmail.com",password:"1234"){
+                name,
+                email,
+                createdAt,
+                token,
+                password
+              }
+            }             
+          </pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="heading2">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+              Login user
+            </button>
+          </h5>
+        </div>
+    
+        <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
+          <div class="card-body"><u>Example code:</u></div>
+          <pre class="prettyprint">
+            mutation {
+              loginUser(email:"mt@gmail.com",password:"1234"){
+                name,
+                email,
+                createdAt,
+                token,
+                password
+              }
+            }            
+          </pre>
+        </div>
+      </div>
+      <h4 class="m-3">Login and add Authorization header before using below endpoints:</h4>
+      <div class="card-body"><u>Example code:</u></div>
+        <pre class="prettyprint">
+          {
+            "Authorization":"Bearer eyJfbQP7iKAwqARNcxKAU"
+          }                       
+        </pre>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Get users
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="card-body"><u>Example code:</u></div>
+          <pre class="prettyprint">
+            {
+              getUsers{
+                id
+                name,
+                email,
+                createdAt
+              }
+            }                       
+          </pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Create task
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+          <div class="card-body"><u>Example code:</u></div>
+          <pre class="prettyprint">
+            mutation {
+              createTask(title:"move database",description:"move the db to a new server to save resources"){
+                title,
+                description,
+                is_completed
+                createdAt
+              }
+            }                                   
+          </pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingFour">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+              Update task
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapse4" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+          <div class="card-body"><u>Example code:</u></div>
+          <pre class="prettyprint">
+            mutation {
+              updateTask(id:"2",title:"please check slack",description:"the server has crushed"){
+               id,
+               title,
+               description,
+               is_completed,
+               createdAt
+             }
+             }                                               
+          </pre>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="heading5">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+              Delete task
+            </button>
+          </h5>
+        </div>
+        <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordion">
+          <div class="card-body"><u>Example code:</u></div>
+          <pre class="prettyprint">
+            mutation {
+              deleteTask(id:"4")
+             }                                                            
+          </pre>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="heading6">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+              Complete task
+            </button>
+          </h5>
+        </div>
+        <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordion">
+          <div class="card-body"><u>Example code:</u></div>
+          <pre class="prettyprint">
+            mutation {
+              completeTask(id:"2"){
+               id,
+               title,
+               description,
+               is_completed,
+               createdAt
+             }
+             }                                                            
+          </pre>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="heading7">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+              Get all tasks
+            </button>
+          </h5>
+        </div>
+        <div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#accordion">
+          <div class="card-body"><u>Example code:</u></div>
+          <pre class="prettyprint">
+            {
+              getTasks{
+                id,
+                title,
+                description,
+                is_completed,
+                createdAt
+              }
+            }                                                                       
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

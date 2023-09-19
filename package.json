@@ -28,7 +28,6 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@apollo/server": "^4.9.3",
     "apollo-server-express": "^2.25.2",
     "bcryptjs": "^2.4.3",
     "class-validator": "^0.13.1",

@@ -39,10 +39,10 @@ const bootstrap = async () => {
 
     server.applyMiddleware({ app, cors: corsConfig, });
     
-    app.get('/', (req, res) => {
-      const indexPath = path.join(__dirname, '..', 'src', 'index.html');
-      res.sendFile(indexPath);
-    });
+    // app.get('/', (req, res) => {
+    //   const indexPath = path.join(__dirname, '..', 'src', 'index.html');
+    //   res.sendFile(indexPath);
+    // });
      app.listen({ port }, () => {
       console.log(
         `🚀 Server ready at ${port}${server.graphqlPath}`

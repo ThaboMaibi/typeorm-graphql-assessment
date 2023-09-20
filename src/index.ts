@@ -20,12 +20,8 @@ const bootstrap = async () => {
     const schema = await createSchema(Container);
    
     const app = express();
-    const corsConfig = {
-      methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
-      credentials: true,
-      origin: [/localhost*/],
-    };
-    app.use(cors(corsConfig));
+
+    app.use(cors());
 
     const port = process.env.PORT;
 
@@ -37,12 +33,12 @@ const bootstrap = async () => {
       playground: true,
     });
 
-    server.applyMiddleware({ app, cors: corsConfig, });
+    server.applyMiddleware({ app });
     
-    // app.get('/', (req, res) => {
-    //   const indexPath = path.join(__dirname, '..', 'src', 'index.html');
-    //   res.sendFile(indexPath);
-    // });
+    app.get('/', (req, res) => {
+      const indexPath = path.join(__dirname, '..', 'src', 'index.html');
+      res.sendFile(indexPath);
+    });
      app.listen({ port }, () => {
       console.log(
         `🚀 Server ready at ${port}${server.graphqlPath}`

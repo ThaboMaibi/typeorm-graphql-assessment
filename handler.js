@@ -1,5 +1,5 @@
 'use strict';
-import bootstrap from "./src/index";
+const bootstrap =require("./src/index") ;
 
 const { app } = bootstrap();
 

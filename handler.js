@@ -1,5 +1,5 @@
 'use strict';
-import bootstrap from "./src/index.ts";
+import bootstrap from "./src/index";
 
 const { app } = bootstrap();
 

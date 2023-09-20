@@ -39,15 +39,17 @@ const bootstrap = async () => {
       const indexPath = path.join(__dirname, '..', 'src', 'index.html');
       res.sendFile(indexPath);
     });
-
+    
      app.listen({ port }, () => {
       console.log(
         `🚀 Server ready at ${port}${server.graphqlPath}`
       );
     });
+    return app ; 
   } catch (err) {
     console.error(err);
   }
 };
 bootstrap();
+export default bootstrap;
 

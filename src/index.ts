@@ -30,6 +30,11 @@ const bootstrap = async () => {
       debug: true,
       playground: true,
     });
+    
+    app.get('/', (req, res) => {
+      const indexPath = path.join(__dirname, '..', 'src', 'index.html');
+      res.sendFile(indexPath);
+    });
 
     server.applyMiddleware({ app });
 

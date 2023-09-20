@@ -1,5 +1,4 @@
 import "reflect-metadata";
-import { Container } from "typedi";
 import * as TypeORM from "typeorm";
 import { ApolloServer } from "apollo-server-express";
 import express from "express";
@@ -9,7 +8,6 @@ require('dotenv').config();
 import createSchema from "./schema";
 
 
-TypeORM.useContainer(Container);
 
 const bootstrap = async () => {
   try {

@@ -3,7 +3,6 @@ import { getCustomRepository } from "typeorm";
 import { User } from "../../models/User";
 import { UserRepository } from "../../repositories/UserRepository";
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcryptjs");
 
 @Resolver((_type) => User)
 export class LoginUser {
@@ -20,9 +19,7 @@ export class LoginUser {
       throw new Error("User not found");
     }
 
-    const isPasswordValid = await bcrypt.compare(password, user.password);
-
-    if (!isPasswordValid) {
+    if (!(password==user.password)) {
       throw new Error("Invalid password");
     }
 

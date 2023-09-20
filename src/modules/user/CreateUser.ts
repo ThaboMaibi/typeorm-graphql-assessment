@@ -4,7 +4,6 @@ import { getCustomRepository } from "typeorm";
 import { User } from "../../models/User";
 import { UserRepository } from "../../repositories/UserRepository";
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcryptjs");
 
 @Resolver((_type) => User)
 export class CreateUser {
@@ -16,13 +15,11 @@ export class CreateUser {
   ): Promise<User> {
     const userRepository = getCustomRepository(UserRepository);
     // hash the password
-    const salt = await bcrypt.genSalt(10);
-    const Hashedpassword = await bcrypt.hash(password, salt);
 
     const user = userRepository.create({
       name: name,
       email: email.toLocaleLowerCase(),
-      password: Hashedpassword,
+      password: password,
     });
     const token = jwt.sign({
           userId:user.id,

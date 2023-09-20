@@ -46,6 +46,6 @@ const bootstrap = async () => {
     console.error(err);
   }
 };
-bootstrap();
 export default bootstrap;
+bootstrap();
 

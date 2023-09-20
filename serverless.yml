@@ -58,9 +58,6 @@ provider:
 #    - include-me.js
 #    - include-me-dir/**
 
-package:
-  patterns:
-    - '!node_modules/**'
 
 
 functions:

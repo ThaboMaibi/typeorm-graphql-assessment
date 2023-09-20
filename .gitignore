@@ -8,3 +8,4 @@ jspm_packages
 .env
 
 dist
+node_modules.zip

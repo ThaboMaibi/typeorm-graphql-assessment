@@ -47,9 +47,8 @@ const permissions =shield({
   }
 })
 
-export default async (Container: any) => {
+export default async () => {
   const schema = await buildSchema({
-    container: Container,
     resolvers: [CreateUser, GetUsers, CreateTask, GetTasks, DeleteTask, UpdateTask, CompleteTask, LoginUser],
   });
 

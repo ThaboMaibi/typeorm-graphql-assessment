@@ -17,7 +17,7 @@ const bootstrap = async () => {
     await TypeORM.createConnection();
 
     
-    const schema = await createSchema(Container);
+    const schema = await createSchema();
    
     const app = express();
 
